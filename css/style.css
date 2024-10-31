@@ -11,15 +11,13 @@ body {
 }
 
 header {
-  height: 380px;
-  padding-top: 30px;
   justify-content: center;
 }
 
 nav {
   justify-content: center;
   display: flex;
-  padding: 7rem 0 0 0;
+  padding: 4rem 0 0 0;
   margin: 0 auto;
 }
 
@@ -30,15 +28,12 @@ nav {
   align-items: center;
   display: flex;
   height: 40px;
-  border-radius: 10px;
-
-  width: 85vw;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 1);
+  width: 100vw;
 }
 
 nav > ul > img {
   border-radius: 50%;
-  max-width: 250px;
+  width: 150px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 1);
 }
 
@@ -64,14 +59,14 @@ a:hover {
 }
 
 h1 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: #FFB830;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #ffb830;
 }
 
 p {
-    font-size: 1rem;
-    font-weight: 400;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 section {
@@ -79,11 +74,11 @@ section {
   width: 80vw;
   background-color: rgba(17, 0, 0, 0.9);
   color: white;
-  border-radius: 10px;
   padding: 30px;
   line-height: 2;
   text-align: justify;
   margin-bottom: 40px;
+  max-height: 100vw;
 }
 
 .img-sobre {
@@ -97,4 +92,21 @@ section {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* MEDIA QUERIES */
+/* CARROSSEL */
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.carousel-item {
+  padding-top: 3rem;
+  display: none;
+  width: 100%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+  display: block;
+}
