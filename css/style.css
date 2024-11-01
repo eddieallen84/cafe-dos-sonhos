@@ -18,9 +18,9 @@ header {
 nav {
   justify-content: center;
   display: flex;
-  padding: 1rem 0;
   margin: 0 auto;
   position: relative;
+
 }
 
 .menu-toggle {
@@ -31,15 +31,17 @@ nav {
 }
 
 .desktop-menu {
-  background-color: rgba(17, 0, 0, 0.9);
+  position: fixed;
+  background-color: rgba(15, 0, 0);
   list-style: none;
   justify-content: center;
   align-items: center;
   display: flex;
-  height: 40px;
-  width: 80vw;
-  margin-bottom: 10rem;
-  transition: max-height 0.3s ease;
+  width: 100vw;
+  padding-top: 3.5rem;
+  padding-bottom: 1rem;
+ height: 4rem;
+
 }
 
 .desktop-menu.active {
@@ -49,12 +51,15 @@ nav {
 
 nav > ul > img {
   border-radius: 50%;
-  width: 200px;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 1);
+  width: 150px;
+  box-shadow: 0px 1px 10px 6px rgba(0, 0, 0);
+}
+main{
+  padding-top: 250px;
 }
 
 a {
-  padding: 20px;
+  padding: 40px;
   text-decoration: none;
   color: white;
   font-weight: 500;
@@ -64,6 +69,7 @@ a {
 
 a:hover {
   color: #ffb830;
+  
 }
 
 h1 {
@@ -93,10 +99,15 @@ section {
   text-align: center;
 }
 
-.img-sobre > img {
-  max-width: 700px;
+img {
+  
+  max-width: 70vw;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
+.cardapio-img{
+  text-align: center;
+}
+
 
 /* Media Queries para responsividade */
 @media (max-width: 768px) {
