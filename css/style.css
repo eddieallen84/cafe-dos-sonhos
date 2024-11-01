@@ -7,7 +7,7 @@ body {
   background-color: #000;
   background-image: url("/img/bg.jpg");
   background-repeat: repeat-x repeat-y;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Header e Navegação */
@@ -20,7 +20,6 @@ nav {
   display: flex;
   margin: 0 auto;
   position: relative;
-
 }
 
 .menu-toggle {
@@ -32,7 +31,7 @@ nav {
 
 .desktop-menu {
   position: fixed;
-  background-color: rgba(15, 0, 0);
+  background-color: rgba(17, 0, 0);
   list-style: none;
   justify-content: center;
   align-items: center;
@@ -40,8 +39,7 @@ nav {
   width: 100vw;
   padding-top: 3.5rem;
   padding-bottom: 1rem;
- height: 4rem;
-
+  height: 4rem;
 }
 
 .desktop-menu.active {
@@ -54,8 +52,8 @@ nav > ul > img {
   width: 150px;
   box-shadow: 0px 1px 10px 6px rgba(0, 0, 0);
 }
-main{
-  padding-top: 250px;
+main {
+  padding-top: 15rem;
 }
 
 a {
@@ -63,13 +61,11 @@ a {
   text-decoration: none;
   color: white;
   font-weight: 500;
-  font-size: 1.2rem;
   transition: color 0.3s ease;
 }
 
 a:hover {
   color: #ffb830;
-  
 }
 
 h1 {
@@ -87,11 +83,10 @@ section {
   margin: 0 auto;
   background-color: rgba(17, 0, 0, 0.9);
   color: white;
-  padding: 30px;
-  line-height: 1.8;
+  padding: 2rem;
   text-align: justify;
-  margin-bottom: 40px;
-  width: 80vw;
+  max-width: 80vw;
+  margin-bottom: 5rem;
 }
 
 .img-sobre {
@@ -100,43 +95,43 @@ section {
 }
 
 img {
-  
   max-width: 70vw;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
-.cardapio-img{
+.cardapio-img {
   text-align: center;
 }
-
 
 /* Media Queries para responsividade */
 @media (max-width: 768px) {
   .menu-toggle {
-      display: block;
+    display: block;
   }
 
   .desktop-menu {
-      flex-direction: column;
-      width: 100%;
-      max-height: 0;
-      overflow: hidden;
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
   }
 
-  nav > ul > img, .img-sobre > img {
-      width: 100px;
+  nav > ul > img,
+  .img-sobre > img {
+    width: 100px;
   }
 
   .desktop-menu a {
-      padding: 10px;
-      font-size: 1rem;
+    padding: 10px;
+    font-size: 1rem;
   }
 
   section {
-      width: 90vw;
-      padding: 20px;
+    width: 90vw;
+    padding: 20px;
   }
 
-  .txt-sobre, .img-sobre {
-      text-align: center;
+  .txt-sobre,
+  .img-sobre {
+    text-align: center;
   }
 }
