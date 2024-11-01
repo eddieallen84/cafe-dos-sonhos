@@ -1,15 +1,16 @@
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   background-color: #000;
   background-image: url("/img/bg.jpg");
   background-repeat: repeat-x repeat-y;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
 }
 
+/* Header e Navegação */
 header {
   justify-content: center;
 }
@@ -17,8 +18,16 @@ header {
 nav {
   justify-content: center;
   display: flex;
-  padding: 5.5rem 0 0 0;
+  padding: 1rem 0;
   margin: 0 auto;
+  position: relative;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
 }
 
 .desktop-menu {
@@ -28,7 +37,14 @@ nav {
   align-items: center;
   display: flex;
   height: 40px;
-  width: 90%;
+  width: 80vw;
+  margin-bottom: 10rem;
+  transition: max-height 0.3s ease;
+}
+
+.desktop-menu.active {
+  max-height: 300px; /* Altura para o menu aberto em dispositivos móveis */
+  overflow: hidden;
 }
 
 nav > ul > img {
@@ -36,7 +52,6 @@ nav > ul > img {
   width: 200px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 1);
 }
-
 
 a {
   padding: 20px;
@@ -67,47 +82,50 @@ section {
   background-color: rgba(17, 0, 0, 0.9);
   color: white;
   padding: 30px;
-  line-height: 2;
+  line-height: 1.8;
   text-align: justify;
   margin-bottom: 40px;
-  max-height: 100vh;
-  
+  width: 80vw;
 }
 
 .img-sobre {
   padding-top: 30px;
   text-align: center;
-  
-  
 }
 
 .img-sobre > img {
   max-width: 700px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-
-  
-}
-.txt-sobre{
-  max-width: 95%;
 }
 
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+  .menu-toggle {
+      display: block;
+  }
 
+  .desktop-menu {
+      flex-direction: column;
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+  }
 
-/* CARROSSEL */
+  nav > ul > img, .img-sobre > img {
+      width: 100px;
+  }
 
-.carousel-container {
-  width: 90%;
-  overflow: hidden;
-  margin: 0 auto;
-}
+  .desktop-menu a {
+      padding: 10px;
+      font-size: 1rem;
+  }
 
-.carousel-item {
-  padding-top: 3rem;
-  display: none;
-  width: 100%;
-  transition: opacity 0.5s ease-in-out;
-}
+  section {
+      width: 90vw;
+      padding: 20px;
+  }
 
-.carousel-item.active {
-  display: block;
+  .txt-sobre, .img-sobre {
+      text-align: center;
+  }
 }
