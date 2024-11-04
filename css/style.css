@@ -1,137 +1,186 @@
+/* Reset e Configurações Gerais */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: #000;
-  background-image: url("/img/bg.jpg");
-  background-repeat: repeat-x repeat-y;
-  font-family: "Poppins", sans-serif;
-}
-
-/* Header e Navegação */
-header {
-  justify-content: center;
-}
-
-nav {
-  justify-content: center;
-  display: flex;
-  margin: 0 auto;
-  position: relative;
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
+  font-family: "Noto Sans", sans-serif;
   color: white;
-  cursor: pointer;
-}
-
-.desktop-menu {
-  position: fixed;
-  background-color: rgba(17, 0, 0);
-  list-style: none;
-  justify-content: center;
-  align-items: center;
   display: flex;
-  width: 100vw;
-  padding-top: 3.5rem;
-  padding-bottom: 1rem;
-  height: 4rem;
-}
-
-.desktop-menu.active {
-  max-height: 300px; /* Altura para o menu aberto em dispositivos móveis */
-  overflow: hidden;
-}
-
-nav > ul > img {
-  border-radius: 50%;
-  width: 150px;
-  box-shadow: 0px 1px 10px 6px rgba(0, 0, 0);
-}
-main {
-  padding-top: 15rem;
-}
-
-a {
-  padding: 40px;
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: #ffb830;
 }
 
 h1 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+  color: #ffb830;
+}
+/* Navegação */
+nav {
+  position: fixed;
+  background-color: rgba(17, 0, 0, 0.9);
+  height: 100vh;
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
   color: #ffb830;
 }
 
-p {
-  font-size: 1rem;
-  font-weight: 400;
+nav ul li img {
+  width: 150px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
 }
-
-section {
-  margin: 0 auto;
-  background-color: rgba(17, 0, 0, 0.9);
-  color: white;
-  padding: 2rem;
+section > img {
+  max-height: 80vh;
+}
+#sobre {
   text-align: justify;
-  max-width: 80vw;
-  margin-bottom: 5rem;
+  line-height: 2rem;
 }
 
-.img-sobre {
-  padding-top: 30px;
+/* Carrossel */
+
+
+.home-img {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  
+}
+
+.home-img > img {
+  max-width: 18rem;
+  padding: 0.3rem;
+}
+
+.img-about {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.img-about img {
+  padding-top: 2rem;
+  max-height: 60vh;
+}
+main {
+  margin-left: 15vw;
+  width: 85vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url("/img/bg.jpg");
+}
+
+.carousel-container {
+  width: 75%;
   text-align: center;
+  background-color: rgba(17, 0, 0, 0.9);
+  border-radius: 10px;
+  padding: 2rem;
+  height: 90vh;
 }
 
-img {
-  max-width: 70vw;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
-.cardapio-img {
-  text-align: center;
+.carousel-item {
+  display: none;
 }
 
-/* Media Queries para responsividade */
+.carousel-item.active {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Estilo para telas menores (até 768px) */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
+  nav {
+    width: 100vw;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 1rem;
   }
 
-  .desktop-menu {
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin: 0 1rem;
+  }
+
+  main {
+    margin-left: 0;
+    width: 100vw;
+    padding: 1rem;
+  }
+
+  .home-img > img {
+    max-width: 80vw;
+  }
+
+  .img-about {
     flex-direction: column;
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
+    gap: 1rem;
   }
 
-  nav > ul > img,
-  .img-sobre > img {
+  .carousel-container {
+    height: auto;
+    padding: 1rem;
+  }
+}
+
+/* Estilo para telas menores (até 480px) */
+@media (max-width: 480px) {
+  nav ul li a {
+    font-size: 0.8rem;
+  }
+
+  nav ul li img {
     width: 100px;
   }
 
-  .desktop-menu a {
-    padding: 10px;
-    font-size: 1rem;
+  .home-img > img {
+    max-width: 95vw;
   }
 
-  section {
-    width: 90vw;
-    padding: 20px;
-  }
-
-  .txt-sobre,
-  .img-sobre {
-    text-align: center;
+  .carousel-container {
+    padding: 0.5rem;
   }
 }
