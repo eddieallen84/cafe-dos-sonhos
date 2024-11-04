@@ -64,28 +64,10 @@ section > img {
 
 /* Carrossel */
 
-#home{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
-  height: 85vh;
-  
-
-}
-.home-img {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-
-  
-}
-
-.home-img > img {
-  max-width: 20vw;
-  max-height: 40vh;
+#home > img {
   padding: 0.3rem;
+  max-width: 19vw;
+  justify-content: center;
 }
 
 .img-about {
@@ -95,7 +77,13 @@ section > img {
 }
 .img-about img {
   padding-top: 2rem;
-  max-height: 60vh;
+  max-height: 55vh;
+}
+#cardapio{
+ 
+}
+#cardapio > img{
+  max-width: 60vw;
 }
 main {
   margin-left: 15vw;
@@ -110,6 +98,7 @@ main {
 .carousel-container {
   width: 75%;
   text-align: center;
+  justify-content: center;
   background-color: rgba(17, 0, 0, 0.9);
   border-radius: 10px;
   padding: 2rem;
@@ -177,3 +166,21 @@ main {
   }
 }
 
+/* Estilo para telas menores (até 480px) */
+@media (max-width: 480px) {
+  nav ul li a {
+    font-size: 0.8rem;
+  }
+
+  nav ul li img {
+    width: 100px;
+  }
+
+  .home-img > img {
+    max-width: 95vw;
+  }
+
+  .carousel-container {
+    padding: 0.5rem;
+  }
+}
