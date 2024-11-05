@@ -2,45 +2,52 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+ 
 }
 
 body {
-  font-family: "Noto Sans", sans-serif;
-  color: white;
-  display: flex;
+  font-family: "Noto Sans";
+  color: #333;
+  background-image: url("/img/bg.jpg");
 }
 
-h1 {
-  color: #ffb830;
-}
-/* Navegação */
+
 nav {
-  position: fixed;
+  padding-top: 4rem;
   background-color: rgba(17, 0, 0, 0.9);
-  height: 100vh;
-  width: 15vw;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding-top: 2rem;
+  height: 8rem;
 }
 
 nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   list-style: none;
-  padding: 0;
+  gap: 2rem; 
+  
+  
 }
 
 nav ul li {
-  margin: 1rem 0;
   text-align: center;
+  
+}
+
+nav img {
+  max-width: 190px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 2px 1px black;
+  position: relative;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.2rem;
   transition: color 0.3s ease;
 }
 
@@ -49,75 +56,99 @@ nav ul li a.active {
   color: #ffb830;
 }
 
-nav ul li img {
-  width: 150px;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-}
-section > img {
-  max-height: 80vh;
-}
-#sobre {
-  text-align: justify;
-  line-height: 2rem;
+
+
+/* Layout das Seções */
+section {
+  padding: 4rem 1rem;
+  text-align: center;
 }
 
-/* Carrossel */
-
-#home > img {
-  padding: 0.3rem;
-  max-width: 19vw;
-  justify-content: center;
-}
-
-.img-about {
-  display: flex;
-  justify-content: center;
+/* Estilos para seções individuais */
+#home {
+  background-color: #fff5e1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  width: fit-content;
+  margin: 6rem auto;
+  height: fit-content;
+  padding: 2rem;
   gap: 2rem;
 }
-.img-about img {
-  padding-top: 2rem;
-  max-height: 55vh;
+#home img{
+  max-width: 20rem;
 }
 
- 
-#cardapio > img{
-  max-width: 60vw;
-}
-main {
-  margin-left: 15vw;
-  width: 85vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-image: url("/img/bg.jpg");
+#sobre {
+  background-color: #f0ebff;
 }
 
-.carousel-container {
-  width: 75%;
-  text-align: center;
-  justify-content: ;
-  background-color: rgba(17, 0, 0, 0.9);
-  border-radius: 10px;
-  padding: 2rem;
-  height: 90vh;
+#cardapio {
+  background-color: #e6f7ff;
 }
 
-.carousel-item {
-  display: none;
+#localizacao {
+  background-color: #e1ffe1;
 }
 
-.carousel-item.active {
-  display: block;
-  animation: fadeIn 0.5s ease-in-out;
+#contato {
+  background-color: #ffe1e1;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+/* Ajuste de Imagens */
+section img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: 1rem 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  body{
+  
+    background-image: none;
+    background-color: #fff5e1;
   }
-  to {
-    opacity: 1;
+  
+  nav {
+    padding-top: 5rem;
+    height: 4rem;
+    margin-bottom: 2rem;
   }
+  nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 2rem; 
+    height: 300px;
+   
+    
+  }
+  nav img {
+    position: absolute;
+    
+    
+  }
+  
+  
+  nav ul li{
+    flex-direction: column;
+    padding: 1rem;
+    display: none;
+  }
+  
+  
+  
+  section {
+    padding: 2rem 1rem;
+  }
+  #home {
+    padding-top: 4rem;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+   
+}
 }
