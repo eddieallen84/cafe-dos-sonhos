@@ -2,7 +2,7 @@
 * {
   margin: 0;
   padding: 0;
- 
+  box-sizing: border-box;
 }
 
 body {
@@ -11,14 +11,13 @@ body {
   background-image: url("/img/bg.jpg");
 }
 
-
 nav {
-  padding-top: 4rem;
-  background-color: rgba(17, 0, 0, 0.9);
+  padding-top: 6rem;
+  background-color: rgba(15, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 8rem;
+  height: 11rem;
 }
 
 nav ul {
@@ -26,18 +25,15 @@ nav ul {
   justify-content: center;
   align-items: center;
   list-style: none;
-  gap: 2rem; 
-  
-  
+  gap: 2rem;
 }
 
 nav ul li {
   text-align: center;
-  
 }
 
 nav img {
-  max-width: 190px;
+  max-width: 180px;
   border-radius: 50%;
   box-shadow: 2px 2px 2px 1px black;
   position: relative;
@@ -56,8 +52,6 @@ nav ul li a.active {
   color: #ffb830;
 }
 
-
-
 /* Layout das Seções */
 section {
   padding: 4rem 1rem;
@@ -66,26 +60,38 @@ section {
 
 /* Estilos para seções individuais */
 #home {
-  background-color: #fff5e1;
+  background-color: #f0ebff;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  width: fit-content;
-  margin: 6rem auto;
-  height: fit-content;
-  padding: 2rem;
-  gap: 2rem;
+  gap: 1rem;
+  justify-items: center;
+  padding: 4rem;
 }
-#home img{
-  max-width: 20rem;
+
+#home img {
+  max-width: 75%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 #sobre {
-  background-color: #f0ebff;
+  padding: 4rem 9rem;
+  background-color: #fff5e1;
+  line-height: 2;
+}
+#sobre p {
+  text-align: justify;
+}
+#sobre img {
+  max-width: 500px;
 }
 
 #cardapio {
-  background-color: #e6f7ff;
+  background-image: none;
+}
+#cardapio img {
+  max-width: 75%;
 }
 
 #localizacao {
@@ -106,49 +112,42 @@ section img {
 
 /* Responsividade */
 @media (max-width: 768px) {
-  body{
-  
+  body {
     background-image: none;
-    background-color: #fff5e1;
   }
-  
+
   nav {
     padding-top: 5rem;
     height: 4rem;
-    margin-bottom: 2rem;
+    background-color: rgb(41, 22, 20);
   }
   nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
-    gap: 2rem; 
+    gap: 2rem;
     height: 300px;
-   
-    
   }
   nav img {
     position: absolute;
-    
-    
   }
-  
-  
-  nav ul li{
+
+  nav ul li {
     flex-direction: column;
     padding: 1rem;
     display: none;
   }
-  
-  
-  
+
   section {
     padding: 2rem 1rem;
   }
   #home {
-    padding-top: 4rem;
     grid-template-columns: repeat(2, 1fr);
     margin: 0 auto;
-   
-}
+  }
+
+  #sobre {
+    padding: 6rem 3rem 3rem 3rem;
+  }
 }
